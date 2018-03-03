@@ -1,5 +1,6 @@
-FROM centos
-MAINTAINER PromptWorks <team@promptworks.com>
+FROM alpine
+
+RUN apk update && apk upgrade && apk add --no-cache bash bash git openssh alpine-sdk
 
 ADD install_ruby.sh /tmp/
 RUN /tmp/install_ruby.sh
